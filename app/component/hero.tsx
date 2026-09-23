@@ -1,5 +1,8 @@
 import Image from "next/image";
 import BannerImage from "../../app/assets/banner.png";
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
 
 const Hero = () => {
     return (
@@ -48,7 +51,7 @@ const Hero = () => {
                         every set.
                     </h1>
 
-                    <p className="mt-4 max-w-[440px] text-[10px] leading-[1.6] text-[#858890] sm:text-[11px]">
+                    <p className={`${inter.className} mt-4 max-w-[440px] text-[10px] leading-[1.6] text-[#858890] sm:text-[11px]`}>
                         FitLog is a dark, no-nonsense gym companion: pick a lift, lock it
                         into today&apos;s plan, and watch the week&apos;s work add up.
                     </p>
