@@ -9,7 +9,7 @@ const NavBar = () => {
         <nav className="w-full border-b border-[#2f3036] bg-[#090a0d]">
             <div className="mx-auto flex h-[70px] items-center justify-between px-5">
 
-                {/* ================= LOGO ================= */}
+
                 <Link
                     href="/"
                     className="flex items-center gap-2.5"
@@ -28,7 +28,7 @@ const NavBar = () => {
                 </Link>
 
 
-                {/* ================= CENTER MENU ================= */}
+
                 <nav className="hidden items-center gap-2 md:flex">
 
                     <Link
@@ -48,7 +48,7 @@ const NavBar = () => {
                 </nav>
 
 
-                {/* ================= RIGHT SIDE ================= */}
+
                 <div className="hidden items-center gap-7 text-[12px] md:flex">
 
                     {/* Plan */}
@@ -64,7 +64,7 @@ const NavBar = () => {
                     </Link>
 
 
-                    {/* Saved */}
+
                     <Link
                         href="/saved"
                         className="flex items-center gap-2 text-[#a7a9b0] transition hover:text-white"
