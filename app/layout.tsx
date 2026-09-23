@@ -3,6 +3,7 @@ import { Oswald } from "next/font/google";
 
 import "./globals.css";
 import NavBar from "./component/NavBar";
+import Footer from "./component/Footer";
 
 const oswald = Oswald({
   subsets: ["latin"],
@@ -24,6 +25,7 @@ export default function RootLayout({
       <body className={`${oswald.className} min-h-full flex flex-col`}>
         <NavBar />
         {children}
+        <Footer />
       </body>
     </html>
   );
