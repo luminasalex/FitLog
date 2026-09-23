@@ -14,110 +14,127 @@ const detailsPage = async ({ params }: { params: Promise<{ libraryId: string }> 
     const post: iData = await res.json();
 
     return (
-        <div className="mx-auto w-full max-w-5xl overflow-hidden rounded-xl border border-[#252830] bg-[#0f1115] p-4 text-white shadow-xl">
-            <div className="grid grid-cols-1 gap-7 md:grid-cols-[305px_1fr]">
+        <div className="w-full min-h-screen bg-[#0b0d11] p-4 sm:p-6 lg:p-8">
+            <div className="mx-auto w-full overflow-hidden rounded-2xl border border-[#252830] bg-[#0f1115] p-6 text-white shadow-2xl lg:p-8">
 
+                <div className="grid min-h-[calc(100vh-64px)] grid-cols-1 gap-10 lg:grid-cols-[46%_1fr] lg:gap-12">
 
-                <div className="relative h-[380px] w-full overflow-hidden rounded-lg md:h-full md:min-h-[380px]">
-                    <Image
-                        src={post.image}
-                        alt={post.name}
-                        fill
-                        sizes="(max-width: 768px) 100vw, 305px"
-                        className="object-cover"
-                    />
-                </div>
-
-
-                <div className="flex flex-col">
-
-
-                    <div>
-                        <h1 className="text-2xl font-extrabold uppercase tracking-tight">
-                            {post.name}
-                        </h1>
-
-                        <p className="mt-2 max-w-xl text-xs leading-5 text-gray-400">
-                            {post.description}
-                        </p>
+                    {/* ================= IMAGE ================= */}
+                    <div className="relative min-h-[550px] w-full overflow-hidden rounded-2xl lg:min-h-full">
+                        <Image
+                            src={post.image}
+                            alt={post.name}
+                            fill
+                            sizes="(max-width: 1024px) 100vw, 46vw"
+                            className="object-cover"
+                            priority
+                        />
                     </div>
 
+                    {/* ================= DETAILS ================= */}
+                    <div className="flex flex-col py-2 lg:py-5">
 
-                    <div className="mt-3 flex flex-wrap gap-2">
-                        {post.muscleGroups?.map((muscle, index) => (
-                            <span
-                                key={index}
-                                className="rounded-full bg-lime-400 px-3 py-1 text-[10px] font-bold uppercase text-black">
-                                {muscle}
-                            </span>
-                        ))}
-                    </div>
+                        {/* TITLE */}
+                        <div>
+                            <h1 className="text-4xl font-extrabold uppercase tracking-tight sm:text-5xl lg:text-6xl">
+                                {post.name}
+                            </h1>
 
-                    {/* ================= STATS ================= */}
-                    <div className="mt-4 overflow-hidden rounded-lg border border-[#252830] bg-[#15181e]">
+                            <p className="mt-5 max-w-4xl text-base leading-7 text-gray-400 lg:text-lg lg:leading-8">
+                                {post.description}
+                            </p>
+                        </div>
 
-                        <div className="divide-y divide-[#252830]">
-                            <InfoRow
-                                label="EQUIPMENT"
-                                value={post.equipment}
-                            />
+                        {/* MUSCLE GROUPS */}
+                        <div className="mt-6 flex flex-wrap gap-3">
+                            {post.muscleGroups?.map((muscle, index) => (
+                                <span
+                                    key={index}
+                                    className="rounded-full bg-lime-400 px-5 py-2.5 text-sm font-bold uppercase text-black"
+                                >
+                                    {muscle}
+                                </span>
+                            ))}
+                        </div>
 
-                            <InfoRow
-                                label="DIFFICULTY"
-                                value={post.difficulty}
-                            />
+                        {/* ================= STATS ================= */}
+                        <div className="mt-8 overflow-hidden rounded-2xl border border-[#292d36] bg-[#15181e]">
 
-                            <InfoRow
-                                label="SETS"
-                                value={post.sets}
-                            />
+                            <div className="divide-y divide-[#292d36]">
 
-                            <InfoRow
-                                label="REPS"
-                                value={post.reps}
-                            />
+                                <InfoRow
+                                    label="EQUIPMENT"
+                                    value={post.equipment}
+                                />
 
-                            <InfoRow
-                                label="DURATION"
-                                value={`${post.duration} min`}
-                            />
+                                <InfoRow
+                                    label="DIFFICULTY"
+                                    value={post.difficulty}
+                                />
 
-                            <InfoRow
-                                label="CALORIES"
-                                value={`${post.caloriesBurned} kcal`}
-                            />
+                                <InfoRow
+                                    label="SETS"
+                                    value={post.sets}
+                                />
 
-                            <InfoRow
-                                label="RATING"
-                                value={post.rating}
-                            />
+                                <InfoRow
+                                    label="REPS"
+                                    value={post.reps}
+                                />
+
+                                <InfoRow
+                                    label="DURATION"
+                                    value={`${post.duration} min`}
+                                />
+
+                                <InfoRow
+                                    label="CALORIES"
+                                    value={`${post.caloriesBurned} kcal`}
+                                />
+
+                                <InfoRow
+                                    label="RATING"
+                                    value={post.rating}
+                                />
+
+                            </div>
+                        </div>
+
+                        {/* ================= INSTRUCTIONS ================= */}
+                        <div className="mt-8">
+
+                            <h2 className="text-lg font-bold uppercase tracking-wide">
+                                Instructions
+                            </h2>
+
+                            <ol className="mt-5 space-y-4 pl-7 text-sm leading-7 text-gray-400 lg:text-base lg:leading-8">
+                                {post.instructions?.map((instruction, index) => (
+                                    <li key={index}>
+                                        {instruction}
+                                    </li>
+                                ))}
+                            </ol>
 
                         </div>
-                    </div>
-                    <div className="mt-4">
-                        <h2 className="text-[11px] font-bold uppercase tracking-wide">
-                            Instructions
-                        </h2>
 
-                        <ol className="mt-2 space-y-2 pl-5 text-[10px] leading-4 text-gray-400">
-                            {post.instructions?.map((instruction, index) => (
-                                <li key={index} className="pl-1">
-                                    {instruction}
-                                </li>
-                            ))}
-                        </ol>
-                    </div>
+                        {/* ================= BUTTONS ================= */}
+                        <div className="mt-auto flex flex-wrap gap-4 pt-10">
 
+                            <button
+                                type="button"
+                                className="rounded-xl bg-lime-400 px-7 py-3.5 text-sm font-bold text-black transition hover:bg-lime-300"
+                            >
+                                Add to today&apos;s plan
+                            </button>
 
-                    <div className="mt-5 flex flex-wrap gap-2">
+                            <button
+                                type="button"
+                                className="rounded-xl border border-[#30343d] bg-[#15181e] px-7 py-3.5 text-sm font-medium text-gray-300 transition hover:bg-[#1c2027]"
+                            >
+                                ♡ Save for later
+                            </button>
 
-                        <button type="button" className="rounded-md bg-lime-400 px-4 py-2 text-[10px] font-bold text-black transition hover:bg-lime-300">
-                            Add to today&apos;s plan
-                        </button>
-
-                        <button type="button" className="rounded-md border border-[#30343d] bg-[#15181e] px-4 py-2 text-[10px] font-medium text-gray-300 transition hover:bg-[#1c2027]">
-                            ♡ Save for later
-                        </button>
+                        </div>
 
                     </div>
                 </div>
