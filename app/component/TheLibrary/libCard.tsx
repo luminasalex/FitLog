@@ -3,7 +3,7 @@ import { iData } from "../type";
 
 const LibCard = (post: iData) => {
     return (
-        <div className="w-full max-w-[532px] overflow-hidden rounded-lg border border-[#24262d] bg-[#15171c]">
+        <div className="mx-auto w-full max-w-[532px] overflow-hidden rounded-lg border border-[#24262d] bg-[#15171c]">
 
             {/* ================= IMAGE ================= */}
             <div className="relative h-[290px] w-full">
@@ -25,51 +25,19 @@ const LibCard = (post: iData) => {
                     {post.muscleGroups.slice(0, 2).map((muscle) => (
                         <span
                             key={muscle}
-                            className="
-                rounded-full
-                bg-[#baff00]
-                px-[14px]
-                py-[6px]
-                font-[family-name:var(--font-inter)]
-                text-[14px]
-                font-bold
-                uppercase
-                leading-none
-                tracking-[0.5px]
-                text-black
-              "
-                        >
+                            className="rounded-full bg-[#baff00] px-[14px] py-[6px] font-[family-name:var(--font-inter)] text-[14px] font-bold uppercase leading-none tracking-[0.5px] text-black">
                             {muscle}
                         </span>
                     ))}
                 </div>
 
                 {/* ================= EXERCISE NAME ================= */}
-                <h2
-                    className="
-            font-[family-name:var(--font-oswald)]
-            text-[27px]
-            font-bold
-            uppercase
-            leading-[1.1]
-            tracking-[0.2px]
-            text-white
-          "
-                >
+                <h2 className="font-[family-name:var(--font-oswald)] text-[27px] font-bold uppercase leading-[1.1] tracking-[0.2px] text-white">
                     {post.name}
                 </h2>
 
                 {/* ================= EQUIPMENT ================= */}
-                <p
-                    className="
-            mt-2
-            font-[family-name:var(--font-inter)]
-            text-[16px]
-            font-normal
-            leading-6
-            text-[#9a9da6]
-          "
-                >
+                <p className="mt-2 font-[family-name:var(--font-inter)] text-[16px] font-normal leading-6 text-[#9a9da6]">
                     {post.equipment}
                 </p>
 
@@ -85,13 +53,7 @@ const LibCard = (post: iData) => {
                             ◷
                         </span>
 
-                        <span
-                            className="
-                font-[family-name:var(--font-inter)]
-                text-[15px]
-                text-[#9a9da6]
-              "
-                        >
+                        <span className="font-[family-name:var(--font-inter)] text-[15px] text-[#9a9da6]">
                             {post.duration} min
                         </span>
                     </div>
@@ -102,13 +64,7 @@ const LibCard = (post: iData) => {
                             ♥
                         </span>
 
-                        <span
-                            className="
-                font-[family-name:var(--font-inter)]
-                text-[15px]
-                text-[#9a9da6]
-              "
-                        >
+                        <span className="font-[family-name:var(--font-inter)] text-[15px] text-[#9a9da6]">
                             {post.caloriesBurned} kcal
                         </span>
                     </div>
@@ -120,12 +76,7 @@ const LibCard = (post: iData) => {
                         </span>
 
                         <span
-                            className="
-                font-[family-name:var(--font-inter)]
-                text-[15px]
-                text-[#9a9da6]
-              "
-                        >
+                            className="font-[family-name:var(--font-inter)] text-[15px] text-[#9a9da6]">
                             {post.rating}
                         </span>
                     </div>
