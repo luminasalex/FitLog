@@ -31,7 +31,7 @@ export default function RootLayout({
           <NavBar />
           {children}
           <Footer />
-          <ToastContainer theme="dark" position="bottom-right" />
+          <ToastContainer theme="dark" position="top-center" />
         </UserContextProvider>
       </body>
     </html>
