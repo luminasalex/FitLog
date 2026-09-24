@@ -13,7 +13,7 @@ export const ActionButtons = ({ post }: { post: iData }) => {
     const { setMyPlan, setSaved, myPlan, saved } = context;
 
     const handleAddToPlan = () => {
-        // Prevent duplicates if you want (optional), but let's just add it
+
         const isAlreadyAdded = myPlan.some(item => item.id === post.id);
         if (isAlreadyAdded) {
             toast.warning(`${post.name} is already in your plan!`);
@@ -35,8 +35,7 @@ export const ActionButtons = ({ post }: { post: iData }) => {
 
     return (
         <div className="mt-auto flex flex-wrap gap-4 pt-10">
-            <button
-                type="button"
+            <button type="button"
                 onClick={handleAddToPlan}
                 className="rounded-xl bg-lime-400 px-7 py-3.5 text-sm font-bold text-black transition hover:bg-lime-300"
             >
