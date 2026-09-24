@@ -29,7 +29,8 @@ const MyPlan = () => {
 
     return (
         <main className="min-h-screen bg-[#0d0f13] px-5 py-9 text-white">
-            <div className="mx-auto w-full max-w-[1110px]">
+
+            <div className="w-full">
 
                 {/* ================= HEADER ================= */}
                 <div className="mb-6">

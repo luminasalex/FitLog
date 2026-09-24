@@ -86,6 +86,7 @@ const PlanCard = ({ post, onRemove }: { post: iData; onRemove?: () => void }) =>
                 }} className="ml-2 flex h-8 w-8 items-center justify-center rounded-full text-[20px] text-[#b4b7bf] transition hover:bg-[#292d35] hover:text-white">
                     X
                 </button>
+
             </div>
         </div>
     );
