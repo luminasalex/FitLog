@@ -93,11 +93,6 @@ const NavBar = () => {
                             <Link href="/" className={pathname === "/" ? "text-[#baff00]" : "text-[#8b8d94] hover:text-[#baff00]"}>Workouts</Link>
                         </li>
 
-                        <li>
-                            <Link href="/component/my-plan" className={pathname === "/" ? "text-[#baff00]" : "text-[#8b8d94] hover:text-[#baff00]"}>
-                                Workouts
-                            </Link>
-                        </li>
 
                         <li>
                             <Link href="/component/my-plan" className={pathname === "/component/my-plan" ? "text-[#baff00]" : "text-[#8b8d94] hover:text-[#baff00]"}>
