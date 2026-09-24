@@ -1,6 +1,7 @@
 import type { iData } from "@/app/component/type";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import { ActionButtons } from "./ActionButtons";
 
 
 const detailsPage = async ({ params }: { params: Promise<{ libraryId: string }> }) => {
@@ -118,23 +119,7 @@ const detailsPage = async ({ params }: { params: Promise<{ libraryId: string }> 
                         </div>
 
                         {/* ================= BUTTONS ================= */}
-                        <div className="mt-auto flex flex-wrap gap-4 pt-10">
-
-                            <button
-                                type="button"
-                                className="rounded-xl bg-lime-400 px-7 py-3.5 text-sm font-bold text-black transition hover:bg-lime-300"
-                            >
-                                Add to today&apos;s plan
-                            </button>
-
-                            <button
-                                type="button"
-                                className="rounded-xl border border-[#30343d] bg-[#15181e] px-7 py-3.5 text-sm font-medium text-gray-300 transition hover:bg-[#1c2027]"
-                            >
-                                ♡ Save for later
-                            </button>
-
-                        </div>
+                        <ActionButtons post={post} />
 
                     </div>
                 </div>

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import BannerImage from "../../app/assets/banner.png";
 import { Inter } from "next/font/google";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,10 +27,11 @@ const Hero = () => {
                         FitLog is a dark, no-nonsense gym companion: pick a lift,
                         lock it into today&apos;s plan, and watch the week&apos;s work add up.
                     </p>
-
-                    <button className="mt-6 rounded-md bg-[#baff00] px-6 py-3 text-[11px] font-bold uppercase text-black transition duration-200 hover:bg-[#c9ff33] hover:shadow-[0_0_22px_rgba(186,255,0,0.2)]">
-                        Browse Workouts
-                    </button>
+                    <Link href="/">
+                        <button className="mt-6 rounded-md bg-[#baff00] px-6 py-3 text-[11px] font-bold uppercase text-black transition duration-200 hover:bg-[#c9ff33] hover:shadow-[0_0_22px_rgba(186,255,0,0.2)]">
+                            Browse Workouts
+                        </button>
+                    </Link>
                 </div>
 
                 <div className="relative hidden h-[330px] w-[420px] shrink-0 sm:block lg:h-[340px] lg:w-[480px]">

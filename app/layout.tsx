@@ -4,6 +4,10 @@ import { Oswald } from "next/font/google";
 import "./globals.css";
 import NavBar from "./component/NavBar";
 import Footer from "./component/Footer";
+import UserContextProvider from "./component/User Context/UserContext";
+
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const oswald = Oswald({
   subsets: ["latin"],
@@ -23,9 +27,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${oswald.className} min-h-full flex flex-col`}>
-        <NavBar />
-        {children}
-        <Footer />
+        <UserContextProvider>
+          <NavBar />
+          {children}
+          <Footer />
+          <ToastContainer theme="dark" position="bottom-right" />
+        </UserContextProvider>
       </body>
     </html>
   );
