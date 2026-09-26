@@ -24,8 +24,7 @@ const Hero = () => {
                     </h1>
 
                     <p className={`${inter.className} mt-6 max-w-[520px] text-[12px] leading-[1.7] text-[#858890] sm:text-[13px]`}>
-                        FitLog is a dark, no-nonsense gym companion: pick a lift,
-                        lock it into today&apos;s plan, and watch the week&apos;s work add up.
+                        FitLog is a dark, no-nonsense gym companion: pick a lift,lock it <br />into today&apos;s plan, and watch the week&apos;s work add up.
                     </p>
                     <Link href="/">
                         <button className="mt-6 rounded-md bg-[#baff00] px-6 py-3 text-[11px] font-bold uppercase text-black transition duration-200 hover:bg-[#c9ff33] hover:shadow-[0_0_22px_rgba(186,255,0,0.2)]">

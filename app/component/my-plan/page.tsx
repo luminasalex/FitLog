@@ -141,6 +141,7 @@ const MyPlan = () => {
                             <PlanCard
                                 key={exercise.id}
                                 post={exercise}
+                                showMarkDone={activeTab === 'plan'}
                                 onRemove={() => {
                                     if (activeTab === 'plan') {
                                         context.setMyPlan(prev => prev.filter(p => p.id !== exercise.id));

@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 import { iData } from "../type";
 import Image from "next/image";
 
-const PlanCard = ({ post, onRemove }: { post: iData; onRemove?: () => void }) => {
+const PlanCard = ({ post, onRemove, showMarkDone = true }: { post: iData; onRemove?: () => void; showMarkDone?: boolean }) => {
     return (
         <div className="flex w-full flex-col gap-4 rounded-[16px] border border-[#292d35] bg-[#181b21] p-4 md:flex-row md:items-center">
 
@@ -65,19 +65,21 @@ const PlanCard = ({ post, onRemove }: { post: iData; onRemove?: () => void }) =>
                 </Link>
 
                 {/* Mark Done */}
-                <button
-                    type="button"
-                    onClick={() => {
-                        toast.success(`Marked ${post.name} as Done!`);
-                        if (onRemove) onRemove();
-                    }}
-                    className="flex h-[34px] flex-1 items-center justify-center gap-2 rounded-full bg-[#baff00] px-4 text-[12px] font-semibold text-black transition hover:bg-[#c8ff32] md:flex-none"
-                >
-                    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                        <path d="m5 12 4 4L19 6" />
-                    </svg>
-                    Mark as Done
-                </button>
+                {showMarkDone && (
+                    <button
+                        type="button"
+                        onClick={() => {
+                            toast.success(`Marked ${post.name} as Done!`);
+                            if (onRemove) onRemove();
+                        }}
+                        className="flex h-[34px] flex-1 items-center justify-center gap-2 rounded-full bg-[#baff00] px-4 text-[12px] font-semibold text-black transition hover:bg-[#c8ff32] md:flex-none"
+                    >
+                        <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                            <path d="m5 12 4 4L19 6" />
+                        </svg>
+                        Mark as Done
+                    </button>
+                )}
 
                 {/* Remove */}
                 <button
